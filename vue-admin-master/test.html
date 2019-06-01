@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panda</title>
+</head>
+<body>
+<script>
+   /* var a1 = ["p", "a"];
+    var a2 = ["6", "9"];
+    a1.forEach(c1 => {
+        a2.forEach(c2 => {
+
+        })
+    })
+
+    var a3 = [a1, a2]
+    var result = a3.reduce((pre, cur) => {
+        let r = [];
+        pre.forEach(p1 => {
+            cur.forEach(c1 => {
+                let pc = p1 + "_" + c1;
+                r.push(pc);
+            })
+        })
+        return r;
+    }, [{}]);
+    console.debug(result)*/
+    var skuProperties =
+        [
+            {"id": 1, "specName": "颜色", "skuValues": ["yellow", "green"]},
+            {"id": 2, "specName": "尺寸", "skuValues": ["16", "26"]}
+        ];
+    var pp=skuProperties.reduce((pre,cur)=>{
+        let r=[];
+        pre.forEach(p1=>{
+            cur.skuValues.forEach(c1=>{
+                var obj ={};
+                Object.assign(obj,p1);
+                obj[cur.specName]=c1;
+                r.push(obj)
+            })
+        })
+        return r;
+    },[{}]);
+    console.debug(pp)
+</script>
+</body>
+</html>
